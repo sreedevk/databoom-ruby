@@ -36,11 +36,11 @@ module Databoom
       @vertices.reject! { |iter_vertex| iter_vertex.value == vertex_value }
     end
 
-    def has_vertex?(vertex_value)
+    def vertex?(vertex_value)
       !find_vertex(vertex_value).nil?
     end
 
-    def has_edge?(source_vertex_value, sink_vertex_value, label = nil)
+    def edge?(source_vertex_value, sink_vertex_value, label = nil)
       !find_edge(source_vertex_value, sink_vertex_value, label).nil?
     end
 
@@ -50,19 +50,19 @@ module Databoom
     end
 
     def out_edges(vertex_value)
-      return nil unless has_vertex?(vertex_value)
+      return nil unless vertex?(vertex_value)
 
       @edges.select {|edge| edge.source = find_vertex(vertex_value) }
     end
 
     def in_edges(vertex_value)
-      return nil unless has_vertex?(vertex_value)
+      return nil unless vertex?(vertex_value)
       
       @edges.select {|edge| edge.sink = find_vertex(vertex_value) }
     end
 
     def find_path(origin_value, terminal_value, path = []) 
-      return nil unless has_vertex?(origin_value) && has_vertex?(terminal_value)
+      return nil unless vertex?(origin_value) && vertex?(terminal_value)
       return path if find_vertex(origin_value)
     end
 
