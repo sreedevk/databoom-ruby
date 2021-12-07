@@ -23,6 +23,8 @@ of a collection of nodes which together represent a sequence
 In mathematics, and more specifically in graph theory, a directed graph (or digraph) is a graph 
 that is made up of a set of vertices connected by directed edges often called arcs.
 
+`NOTE: This Implementation of digraph is heavily inspired by Erlang/OTP :digraph`
+
 ```ruby
   dg = Databoom::Digraph.new
 
