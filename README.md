@@ -1,6 +1,6 @@
-# Databoom - Miscellaneous Datastrctures Implemented in Ruby
+## Databoom - Miscellaneous Datastrctures Implemented in Ruby
 
-## Databoom::LinkedList
+### Databoom::LinkedList
 
 ```ruby
   ll = Databoom::LinkedList.new
