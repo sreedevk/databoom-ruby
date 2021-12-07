@@ -1,6 +1,7 @@
-## Databoom - Miscellaneous Datastrctures Implemented in Ruby
+# Databoom 
+#### Miscellaneous Datastrctures Implemented in Ruby
 
-### Databoom::LinkedList
+## Databoom::LinkedList
 
 a linked list is a linear collection of data elements whose order is not given by their physical 
 placement in memory. Instead, each element points to the next. It is a data structure consisting 
@@ -17,7 +18,7 @@ of a collection of nodes which together represent a sequence
   ll.find(0)  #=> nil
 ```
 
-### Databoom::Digraph
+## Databoom::Digraph
 
 In mathematics, and more specifically in graph theory, a directed graph (or digraph) is a graph 
 that is made up of a set of vertices connected by directed edges often called arcs.
