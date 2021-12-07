@@ -3,7 +3,7 @@ module Databoom
     attr_reader :vertices, :edges
 
     class Vertex
-      attr_accessor :value, :label, :graph
+      attr_accessor :value, :label
 
       def initialize(value, label = nil)
         @value = value
@@ -47,6 +47,23 @@ module Databoom
     # NOTE: label has to be unique. Only one edge with the same source & sink can exist with no label
     def add_edge(source_value, sink_value, label = nil)
       find_edge(source_value, sink_value, label) || create_edge(source_value, sink_value, label)
+    end
+
+    def out_edges(vertex_value)
+      return nil unless has_vertex?(vertex_value)
+
+      @edges.select {|edge| edge.source = find_vertex(vertex_value) }
+    end
+
+    def in_edges(vertex_value)
+      return nil unless has_vertex?(vertex_value)
+      
+      @edges.select {|edge| edge.sink = find_vertex(vertex_value) }
+    end
+
+    def find_path(origin_value, terminal_value, path = []) 
+      return nil unless has_vertex?(origin_value) && has_vertex?(terminal_value)
+      return path if find_vertex(origin_value)
     end
 
     private 
