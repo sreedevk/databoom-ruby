@@ -64,7 +64,7 @@ module Databoom
     end
 
     def find_vertex(vertex_value)
-      @vertices.find { |iter_vertval| iter_vertval == vertex_value }
+      @vertices.find { |iter_vertex| iter_vertex.value == vertex_value }
     end
 
     def create_vertex(vertex_value, label = nil)
