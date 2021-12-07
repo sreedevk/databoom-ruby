@@ -7,7 +7,7 @@ module Databoom
   require_relative "databoom/binary_search_tree"
   require_relative "databoom/circular_dequeue"
   require_relative "databoom/dequeue"
-  require_relative "databoom/graph"
+  require_relative "databoom/digraph"
   require_relative "databoom/lru_cache"
   require_relative "databoom/stack"
   require_relative "databoom/queue"

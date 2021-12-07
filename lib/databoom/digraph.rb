@@ -3,7 +3,7 @@ module Databoom
     attr_reader :vertices, :edges
 
     class Vertex
-      attr_accessor :value, :label
+      attr_accessor :value, :label, :graph
 
       def initialize(value, label = nil)
         @value = value
@@ -34,6 +34,14 @@ module Databoom
 
     def del_vertex(vertex_value)
       @vertices.reject! { |iter_vertex| iter_vertex.value == vertex_value }
+    end
+
+    def has_vertex?(vertex_value)
+      !find_vertex(vertex_value).nil?
+    end
+
+    def has_edge?(source_vertex_value, sink_vertex_value, label = nil)
+      !find_edge(source_vertex_value, sink_vertex_value, label).nil?
     end
 
     # NOTE: label has to be unique. Only one edge with the same source & sink can exist with no label
