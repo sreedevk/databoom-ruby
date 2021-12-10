@@ -50,3 +50,19 @@ that is made up of a set of vertices connected by directed edges often called ar
   dg.edge?(:new_york, :london) #=> true
   dg.edge?(:delhi, :london) #=> false
 ```
+
+## Databoom::Stack
+In computer science, a stack is an abstract data type that serves as a collection of elements, with two main principal operations:
+Push, which adds an element to the collection, and
+Pop, which removes the most recently added element that was not yet removed.
+
+The order in which elements come off a stack gives rise to its alternative name, LIFO (last in, first out). Additionally, a peek operation may give access to the top without modifying the stack.
+
+```ruby
+  ds = Databoom::Stack.new
+  ds.push(10)  #=> [10]
+  ds.push(20)  #=> [10, 20]
+  ds.push(500) #=> [10, 20, 500]
+  ds.pop       #=> [500, [10, 20]]
+  ds.pop!      #=> 20
+```
