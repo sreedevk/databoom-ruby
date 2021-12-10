@@ -1,6 +1,16 @@
 # Databoom 
 #### Miscellaneous Datastrctures Implemented in Ruby
 
+## Installation
+### Gemfile
+  ```ruby
+    gem "databoom", "~> 0.0.2"
+  ```
+### Direct
+  ```bash
+    gem install databoom -v 0.0.2
+  ```
+
 ## Databoom::LinkedList
 
 a linked list is a linear collection of data elements whose order is not given by their physical 
