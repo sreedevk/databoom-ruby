@@ -76,3 +76,12 @@ The order in which elements come off a stack gives rise to its alternative name,
   ds.pop       #=> [500, [10, 20]]
   ds.pop!      #=> 20
 ```
+
+## Roadmap
+1. Dequeue
+2. AVL Tree
+3. Trie
+4. LRU Cache
+5. Circular Dequeue
+6. Doubly Linked List
+7. Binary Search Tree
