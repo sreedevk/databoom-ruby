@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Databoom
   class LinkedList
     attr_accessor :head
@@ -28,7 +30,7 @@ module Databoom
     end
 
     def initialize
-      @head = Node.new("*")
+      @head = Node.new('*')
     end
 
     def append(value)
@@ -45,7 +47,7 @@ module Databoom
     end
 
     def inspect
-      @head&.inspect 
+      @head&.inspect
     end
   end
 end

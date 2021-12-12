@@ -76,6 +76,25 @@ The order in which elements come off a stack gives rise to its alternative name,
   ds.pop       #=> [500, [10, 20]]
   ds.pop!      #=> 20
 ```
+## Databoom::Matrix
+Extends the ruby Matrix with some additional functions specifically meant for competitive programming.
+Made this because of advent of code, 2021.
+
+```ruby
+  mat = Databoom::Matrix.build(10, 10) { rand } #=> Matrix[[0.2, 0.3...], [0.1, 0.8...]...]
+
+  # Returns all the neighbors for mat[0, 1] upto depth 2
+  mat.neighbors(0, 1, 2)
+
+  # Returns all the diagonal neighbors for mat[0, 1] upto depth 2
+  mat.diagonal_neighbors(0, 1, 2)
+
+  # Returns all the vertical neighbors for mat[0, 1] upto depth 2
+  mat.vertical_neighbors(0, 1, 2)
+
+  # Returns all the horizontal neighbors for mat[0, 1] upto depth 2
+  mat.horizontal_neighbors(0, 1, 2)
+```
 
 ## Roadmap
 1. Dequeue
@@ -85,3 +104,5 @@ The order in which elements come off a stack gives rise to its alternative name,
 5. Circular Dequeue
 6. Doubly Linked List
 7. Binary Search Tree
+
+

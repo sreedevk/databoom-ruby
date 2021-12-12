@@ -1,10 +1,17 @@
+# frozen_string_literal: true
+
 require 'forwardable'
 
 module Databoom
   class Stack
     extend Forwardable
-    def initialize; @mem = []; end
-    def pop; [@mem.pop, @mem]; end
+    def initialize
+      @mem = []
+    end
+
+    def pop
+      [@mem.pop, @mem]
+    end
 
     def_delegator   :@mem, :push
     def_delegator   :@mem, :pop, :pop!

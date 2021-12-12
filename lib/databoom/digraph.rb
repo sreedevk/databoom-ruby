@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Databoom
   class Digraph
     attr_reader :vertices, :edges
@@ -26,7 +28,6 @@ module Databoom
       @edges = []
     end
 
-
     # NOTE: Vertex values are uniq
     def add_vertex(vertex_value, label = nil)
       find_vertex(vertex_value) || create_vertex(vertex_value, label)
@@ -52,27 +53,27 @@ module Databoom
     def out_edges(vertex_value)
       return nil unless vertex?(vertex_value)
 
-      @edges.select {|edge| edge.source = find_vertex(vertex_value) }
+      @edges.select { |edge| edge.source = find_vertex(vertex_value) }
     end
 
     def in_edges(vertex_value)
       return nil unless vertex?(vertex_value)
-      
-      @edges.select {|edge| edge.sink = find_vertex(vertex_value) }
+
+      @edges.select { |edge| edge.sink = find_vertex(vertex_value) }
     end
 
-    def find_path(origin_value, terminal_value, path = []) 
+    def find_path(origin_value, terminal_value, path = [])
       return nil unless vertex?(origin_value) && vertex?(terminal_value)
       return path if find_vertex(origin_value)
     end
 
-    private 
+    private
 
     def find_edge(source_value, sink_value, label = nil)
       @edges.find do |iter_edge|
-        iter_edge.source == find_vertex(source_value) && 
-          iter_edge.sink == find_vertex(sink_value) && 
-          iter_edge.label == label  
+        iter_edge.source == find_vertex(source_value) &&
+          iter_edge.sink == find_vertex(sink_value) &&
+          iter_edge.label == label
       end
     end
 
