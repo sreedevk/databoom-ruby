@@ -64,7 +64,12 @@ module Databoom
 
     def find_path(origin_value, terminal_value, path = [])
       return nil unless vertex?(origin_value) && vertex?(terminal_value)
-      return path if find_vertex(origin_value)
+      return nil if out_edges(origin_value).none?
+      return path if find_edge(origin_value, terminal_value)
+
+      return out_edges(origin_value)
+        .map(&:value)
+        .filter_map { |recur_branch| [*path, recur_branch] if find_path(recur_branch, terminal_value, [*path, recur_branch]) }
     end
 
     private
