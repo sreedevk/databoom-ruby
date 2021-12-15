@@ -14,4 +14,5 @@ module Databoom
   require_relative 'databoom/queue'
   require_relative 'databoom/trie'
   require_relative 'databoom/matrix'
+  require_relative 'databoom/priority_queue'
 end

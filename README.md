@@ -104,5 +104,6 @@ Made this because of advent of code, 2021.
 5. Circular Dequeue
 6. Doubly Linked List
 7. Binary Search Tree
+8. Priority Queue
 
 
